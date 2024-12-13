@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменить цену товара</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Изменить цену товара: {{ product.name }}</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="price">Новая цена:</label>
+                <input type="number" step="0.01" class="form-control" id="price" name="price" required value="{{ product.price }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Обновить цену</button>
+            
+            <a href="{{ url_for('get_products') }}" class="btn btn-secondary">Назад к списку товаров</a>
+        </form>
+    </div>
+</body>
+</html>
